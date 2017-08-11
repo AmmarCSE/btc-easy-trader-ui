@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Ledger from './Ledger'
-import {TRANSACTION_TYPES} from '../resources/enums'
+import Positions from './Positions'
+//import {TRANSACTION_TYPES} from '../resources/enums'
 
-function setup(balance, transactions) {
+function setup(positions) {
   const component = shallow(
-    <Ledger balance={balance} transactions={transactions} />
+    <Positions positions={positions} />
   )
 
   return {
@@ -13,25 +13,50 @@ function setup(balance, transactions) {
   }
 }
 
-describe('Ledger component', () => {
+describe('Positions component', () => {
   it('should exist', () => {
-    expect(Ledger).toBeTruthy()
+    expect(Positions).toBeTruthy()
   })
-  describe('Balance', () => {
-    it('should display balance', () => {
+  describe('Positions View', () => {
+    it('should display Positions', () => {
       const { component } = setup()
-      expect(component.text()).toMatch(/^Balance:/)
+      expect(component.text()).toMatch(/^Positions/)
     })
-    it('should display balance as number', () => {
-      const { component } = setup(1000)
-      expect(component.text()).toMatch(/^Balance: 1000/)
-    })
-    it('should display balance as zero when none is provided', () => {
+    it('should display headers', () => {
       const { component } = setup()
-      expect(component.text()).toMatch(/^Balance: 0/)
+      expect(component.html()).toMatch(/Exchange.+Currency.+Amount.+Price.+\% Change.+Date/)
+    })
+    it('should display corresponding values', () => {
+      const positions = [
+        {
+          exchange: 'Poloniex',
+          currency: 'BTC',
+          amount: 100.98,
+          price: 5097.23,
+          percentChange: 0.13,
+          purchaseDate: new Date('2015-09-18').getTime()
+        },
+        {
+          exchange: 'Kraken',
+          currency: 'ETH',
+          amount: 0.98,
+          price: 0.23,
+          percentChange: -100.13,
+          purchaseDate: new Date('2025-09-18').getTime()
+        }
+      ]
+      const { component } = setup(positions)
+          
+      console.log(component.html())
+      expect(component.html()).toMatch(/BTC.+100.98.+5097.23.+0.13.+2015\-09\-18.+ETH.+0.98.+0.23.+\-100.13.+2025\-09\-18/)
+    })
+    it('should display a "New position" button', () => {
+      const { component } = setup()
+      const matchedButtons = component.find('button').filterWhere(n => n.text() == 'New position');
+      expect(matchedButtons.length).toEqual(1);
     })
   })
-  describe('Transactions', () => {
+  /*describe('Transactions', () => {
     it('should display transaction if there is one', () => {
       let date = new Date().getTime()
       const transaction = {
@@ -77,5 +102,5 @@ describe('Ledger component', () => {
       const matchedButtons = component.find('button').filterWhere(n => n.text() == 'Add transaction');
       expect(matchedButtons.length).toEqual(1);
     })
-  })
+  })*/
 })
