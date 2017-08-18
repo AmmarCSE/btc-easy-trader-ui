@@ -1,6 +1,6 @@
 import assert from 'assert';
-import chai from './bower_components/chai/chai';
-import sinon from './bower_components/sinon/lib/sinon';
+import chai from '../..//bower_components/chai/chai';
+import sinon from '../../bower_components/sinon/lib/sinon';
 import chaiAsPromised from 'chai-as-promised';
 
 let {expect} = chai;
