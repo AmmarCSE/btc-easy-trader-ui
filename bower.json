@@ -1,0 +1,11 @@
+{
+  "name": "simple-router",
+  "private": true,
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "sinon": "^1.17.7",
+    "mocha": "^3.2.0"
+  }
+}

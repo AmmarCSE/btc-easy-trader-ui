@@ -6,6 +6,7 @@ class Positions extends Component {
   render() {
     let { positions } = this.props
     positions = positions || []
+    console.log(99)
     return (
       <div>
         <div>
@@ -33,28 +34,30 @@ class Positions extends Component {
             </th>
           </thead>
           <tbody>
-              {positions.map(position =>
-                <tr>
-                  <td key={generateReactKey()}>
-                    {position.exchange}
-                  </td>
-                  <td key={generateReactKey()}>
-                    {position.currency}
-                  </td>
-                  <td key={generateReactKey()}>
-                    {position.amount}
-                  </td>
-                  <td key={generateReactKey()}>
-                    {position.price}
-                  </td>
-                  <td key={generateReactKey()}>
-                    {position.percentChange}
-                  </td>
-                  <td key={generateReactKey()}>
-                    {new Date(position.purchaseDate).toISOString()}
-                  </td>
-                </tr>
-              )}
+              {
+                positions.map(position =>
+                  <tr>
+                    <td key={generateReactKey()}>
+                      {position.exchange}
+                    </td>
+                    <td key={generateReactKey()}>
+                      {position.currency}
+                    </td>
+                    <td key={generateReactKey()}>
+                      {position.amount}
+                    </td>
+                    <td key={generateReactKey()}>
+                      {position.price}
+                    </td>
+                    <td key={generateReactKey()}>
+                      {position.percentChange}
+                    </td>
+                    <td key={generateReactKey()}>
+                      {new Date(position.purchaseDate).toISOString()}
+                    </td>
+                  </tr>
+                )
+              }
           </tbody>
         </table>
         <button>New position</button>

@@ -47,7 +47,6 @@ describe('Positions component', () => {
       ]
       const { component } = setup(positions)
           
-      console.log(component.html())
       expect(component.html()).toMatch(/BTC.+100.98.+5097.23.+0.13.+2015\-09\-18.+ETH.+0.98.+0.23.+\-100.13.+2025\-09\-18/)
     })
     it('should display a "New position" button', () => {
