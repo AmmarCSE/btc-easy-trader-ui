@@ -6,12 +6,11 @@ class Positions extends Component {
   render() {
     let { positions } = this.props
     positions = positions || []
-    console.log(99)
     return (
-      <div>
-        <div>
+      <div id="PositionsView">
+        <h2>
           Positions
-        </div>
+        </h2>
         <table>
           <thead>
             <th>
