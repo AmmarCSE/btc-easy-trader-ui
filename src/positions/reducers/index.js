@@ -1,9 +1,7 @@
-export default (state = 0, action) => {
+export default function(state = [], action) {
   switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
+    case 'RECEIVE_POSITIONS':
+      return action.positions
     default:
       return state
   }

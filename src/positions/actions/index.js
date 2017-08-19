@@ -2,8 +2,9 @@
 
 export const RECEIVE_POSITIONS = 'RECEIVE_POSITIONS'
 
-export function receivePositions() {
+export function receivePositions(positions = []) {
   return {
-    type: RECEIVE_POSITIONS
+    type: RECEIVE_POSITIONS,
+    positions
   }
 }
