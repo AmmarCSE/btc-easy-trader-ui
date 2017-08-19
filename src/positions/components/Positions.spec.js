@@ -1,6 +1,6 @@
 import assert from 'assert';
-import chai from '../..//bower_components/chai/chai';
-import sinon from '../../bower_components/sinon/lib/sinon';
+import chai from '../../..//bower_components/chai/chai';
+import sinon from '../../../bower_components/sinon/lib/sinon';
 import chaiAsPromised from 'chai-as-promised';
 
 let {expect} = chai;
@@ -8,10 +8,8 @@ chai.use(chaiAsPromised);
 
 describe('BTC Easy Trader App', function () {
   beforeEach(function(){
-    console.log('here')
-      browser.ignoreSynchronization = true;
-      browser.get('http://localhost:3000/index.html#');
-
+    browser.ignoreSynchronization = true;
+    browser.get('http://localhost:3000/index.html#');
   })
   describe('Positions', function () {
     it('should exist', () => {

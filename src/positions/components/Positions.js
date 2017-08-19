@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 //import {TRANSACTION_TYPES} from '../resources/enums'
-import {generateReactKey} from '../utils'
+import {generateReactKey} from '../../utils'
 
 class Positions extends Component {
   render() {
