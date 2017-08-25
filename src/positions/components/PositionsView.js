@@ -1,9 +1,14 @@
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 //import {TRANSACTION_TYPES} from '../resources/enums'
 import {generateReactKey} from '../../utils'
 
-class Positions extends Component {
+class PositionsView extends Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
+    console.log(this.props)
     let { positions } = this.props
     positions = positions || []
     return (
@@ -65,4 +70,4 @@ class Positions extends Component {
   }
 }
 
-export default Positions 
+export default connect()(PositionsView);

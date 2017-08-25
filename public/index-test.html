@@ -6,7 +6,6 @@
 
     <script src="test_plugins/browser-endpoints.js"></script>
     <script>
-      XMLHttpRequest.DONE = 4
       var app = browserServer()
       app.get('[be]/positions', function(req, res){
           var positions = [

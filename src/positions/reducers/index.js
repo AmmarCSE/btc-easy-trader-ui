@@ -1,4 +1,4 @@
-export default function(state = [], action) {
+export function positionsReducer(state = [], action) {
   switch (action.type) {
     case 'RECEIVE_POSITIONS':
       return action.positions

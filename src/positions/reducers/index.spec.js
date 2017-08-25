@@ -1,6 +1,6 @@
 import chai from '../../..//bower_components/chai/chai';
 import chaiAsPromised from 'chai-as-promised';
-import positionsReducer from './index'
+import {positionsReducer} from './index'
 
 let {expect} = chai;
 chai.use(chaiAsPromised);

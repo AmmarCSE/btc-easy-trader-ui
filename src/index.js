@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import App from './App'
-import configureStore from './store/configureStore'
+import { configureStore } from './store/configureStore'
 
 const store = configureStore()
 
