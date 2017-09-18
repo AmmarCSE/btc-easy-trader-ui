@@ -1,5 +1,16 @@
+/*
+ * 1 - I will need to do exchange, market, currency as three seperate inputs
+ * 2 - Do it in mongodob with an excahnges collection and an exchanges refrence for each user
+ * 3 - Figure out how the data strutures will be recieved in the front end, maybe:
+ * {
+ *  user: {
+ *    exchanges: {
+ *      prepared to be full from server
+ *    }
+ *  }
+ */
 import React from 'react'
-import { mount } from 'enzyme'
+//import { mount } from 'enzyme'
 import NewPosition from './NewPosition'
 
 function setup(exchanges) {
